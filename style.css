@@ -17,7 +17,7 @@ body {
   grid-template-areas:
     "aside main"
     "aside footer";
-  grid-template-columns: auto ;
+  grid-template-columns: 20rem calc(100vw - 20rem) ;
   grid-template-rows: calc(100vh - 2rem) 2rem;
 }
 
@@ -25,6 +25,23 @@ aside {
   color: var(--light-color);
   grid-area: aside;
   background-color: var(--brand-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+aside div{
+  padding-top: 2rem;
+}
+
+aside input[type='range']{
+  accent-color: var(--dark-color);
+}
+
+i.open{
+  align-self: flex-end;
 }
 
 main{
