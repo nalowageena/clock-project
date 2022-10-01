@@ -76,9 +76,24 @@ svg {
   cursor: pointer;
   transition: all 0.3s ease-out;
 }
+
 svg:hover {
   fill: var(--brand-color);
   height: 74px;
   width: 74px;
   margin: 1.2rem;
+}
+
+footer{
+  text-align: center;
+}
+
+footer .fa-heart{
+  color: var(--brand-color);
+}
+
+footer span{
+  font-style: italic;
+  font-weight: 700;
+  color: var(--mid-color);
 }
