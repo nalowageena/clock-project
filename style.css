@@ -17,8 +17,9 @@ body {
   grid-template-areas:
     "aside main"
     "aside footer";
-  grid-template-columns: auto auto ;
+  grid-template-columns: auto auto; 
   grid-template-rows: calc(100vh - 2rem) 2rem;
+  overflow: hidden;
 }
 
 aside {
@@ -29,8 +30,15 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: start;
   gap: 2.5rem;
-  width: 20rem;
+  min-width: 3rem;
+  transition: justify-content 2s ease-in-out, min-width 1s;
+}
+aside:hover{
+  min-width: 20rem;
+  justify-content: center;
+  gap: 4rem;
 }
 
 aside div{
@@ -45,18 +53,9 @@ aside i{
   cursor: pointer;
 }
 
-i.fa-x-mark{
-  align-self: flex-end;
-}
-
-.close{
-  width: 5rem;
-}
-
 main{
   grid-area: main;
-  min-width: calc(100vw - 20rem);
-  max-width: calc(100vw - 5rem);
+  min-width: calc(100vw - 3rem);
 }
 
 main,footer{
