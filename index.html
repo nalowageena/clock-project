@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Clock Project</title>
+  </head>
+  <body>
+    <aside>
+      <!-- modify alarm volume -->
+      <div>
+        <p>volume</p>
+      </div>
+      <!-- toggle light mode -->
+      <div><i></i> <span>light mode</span></div>
+    </aside>
+    <main>
+      <section>
+        <!-- three clocks: an alarm clock, a stopwatch and a timer -->
+        <i></i>
+        <i></i>
+        <i></i>
+      </section>
+      <section class="alarm">
+        <!-- <div class="format24">
+          <input type="time" name="alarm" id="alarm" />
+        </div> -->
+        <div class="format12">
+          <!-- svg of an alarm clock: 24 hour format -->
+          <input type="time" name="alarm" id="alarm" />
+
+          <div class="repeatDay">
+            <p>Repeat</p>
+            <div>
+              <label for="monday">M</label>
+              <input type="checkbox" name="monday" id="monday" />
+            </div>
+            <div>
+              <label for="tuesday">T</label>
+              <input type="checkbox" name="tuesday" id="tuesday" />
+            </div>
+            <div>
+              <label for="wednesday">W</label>
+              <input type="checkbox" name="wednesday" id="wednesday" />
+            </div>
+            <div>
+              <label for="thursday">Th</label>
+              <input type="checkbox" name="thursday" id="thursday" />
+            </div>
+            <div>
+              <label for="friday">F</label>
+              <input type="checkbox" name="friday" id="friday" />
+            </div>
+            <div>
+              <label for="saturday">Sat</label>
+              <input type="checkbox" name="saturday" id="saturday" />
+            </div>
+            <div>
+              <label for="sunday">Sun</label>
+              <input type="checkbox" name="sunday" id="sunday" />
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="format">
+            <button>12 hour format</button>
+            <button>24 hour format</button>
+          </div>
+          <button>save alarm</button>
+        </div>
+      </section>
+      <section class="timer">
+        <!-- on hold -->
+      </section>
+      <section class="stopwatch">
+        <!-- on hold -->
+      </section>
+    </main>
+    <footer>made with love by nalowa</footer>
+    <script src="/app.js"></script>
+  </body>
+</html>

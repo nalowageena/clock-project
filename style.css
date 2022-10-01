@@ -1,0 +1,38 @@
+:root {
+  --brand-color: #7e81ff;
+  --dark-color: #1e293b;
+  --mid-color: #b8bfc6;
+  --light-color: #ffffff;
+  --neon-green-color: #baffb4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "aside main"
+    "aside footer";
+  grid-template-columns: auto ;
+  grid-template-rows: calc(100vh - 2rem) 2rem;
+}
+
+aside {
+  color: var(--light-color);
+  grid-area: aside;
+  background-color: var(--brand-color);
+}
+
+main{
+  grid-area: main;
+}
+
+main,footer{
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
