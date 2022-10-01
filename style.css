@@ -1,5 +1,5 @@
 :root {
-  --brand-color: #FF6363;
+  --brand-color: #ff6363;
   --dark-color: #1e293b;
   --mid-color: #b8bfc6;
   --light-color: #ffffff;
@@ -17,7 +17,7 @@ body {
   grid-template-areas:
     "aside main"
     "aside footer";
-  grid-template-columns: auto auto; 
+  grid-template-columns: auto auto;
   grid-template-rows: calc(100vh - 2rem) 2rem;
   overflow: hidden;
 }
@@ -35,31 +35,50 @@ aside {
   min-width: 3rem;
   transition: justify-content 2s ease-in-out, min-width 1s, gap 2s;
 }
-aside:hover{
+aside:hover {
   min-width: 20rem;
   justify-content: center;
   gap: 6rem;
 }
 
-aside div{
+aside div {
   padding-top: 2rem;
 }
 
-aside input[type='range']{
+aside input[type="range"] {
   accent-color: var(--dark-color);
 }
 
-aside i{
+aside i {
   cursor: pointer;
 }
 
-main{
+main {
   grid-area: main;
   min-width: calc(100vw - 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-main,footer{
+main,
+footer {
   background-color: var(--dark-color);
   color: var(--light-color);
 }
 
+svg {
+  fill: var(--light-color);
+  height: 45px;
+  width: 45px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+svg:hover {
+  fill: var(--brand-color);
+  height: 74px;
+  width: 74px;
+  margin: 1.2rem;
+}
