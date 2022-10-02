@@ -3,7 +3,9 @@
   --dark-color: #1e293b;
   --mid-color: #b8bfc6;
   --light-color: #ffffff;
-  --neon-green-color: #baffb4;
+
+  --brand-font:  'Zilla Slab', serif;
+  --doc-font: 'Poppins', sans-serif;
 }
 
 * {
@@ -33,7 +35,7 @@ aside {
   justify-content: start;
   gap: 2.5rem;
   min-width: 3rem;
-  transition: justify-content 2s ease-in-out, min-width 1s, gap 2s;
+  transition: min-width 1s, gap 2s;
 }
 aside:hover {
   min-width: 20rem;
@@ -74,7 +76,7 @@ svg {
   width: 45px;
   margin: 1rem;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 svg:hover {
@@ -84,8 +86,26 @@ svg:hover {
   margin: 1.2rem;
 }
 
+h1 {
+  font-family: var(--brand-font);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 2.5rem;
+  padding-bottom: 1.2rem;
+  background-color: #b8bfc6;
+    background-image: linear-gradient(60deg, #b8bfc6, #ff6363);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
+
 footer{
   text-align: center;
+  font-family: var(--doc-font);
+  font-weight: 300;
 }
 
 footer .fa-heart{
@@ -94,6 +114,6 @@ footer .fa-heart{
 
 footer span{
   font-style: italic;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--mid-color);
 }
