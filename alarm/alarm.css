@@ -1,0 +1,56 @@
+main{
+  display: flex;
+  flex-direction: column;
+}
+main .fa-arrow-left{
+  align-self: flex-start;
+  padding: 0.8rem;
+}
+
+section{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  /* place-items: center; */
+  grid-template-areas: 'title title'
+  'all-alarms create-alarm';
+  grid-template-columns: auto auto;
+  grid-template-rows: 5rem auto;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+h1{
+  grid-area: title;
+}
+
+
+.all-alarms{
+  grid-area: all-alarms;
+}
+
+.create-alarm{
+  grid-area: create-alarm;
+  background-color: black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-alarm input[type="time"]{
+  padding: 1.5rem 1rem;
+  border: none;
+  font-size: 2rem;
+  background-color: var(--brand-color);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  text-align: center;
+  max-width: 22rem;
+}
+
+.create-alarm input[type="time"]:focus{
+  outline:2px solid var(--mid-color);
+}

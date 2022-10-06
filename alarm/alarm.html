@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./alarm.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,500&family=Zilla+Slab:wght@600;700&family=Orbitron:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Clock project</title>
+  </head>
+  <body>
+    <aside>
+      <div>
+        <i class="fa fa-volume-up"></i>
+        <!-- <input type="range" min="0" max="100"> -->
+      </div>
+      <!-- toggle light mode -->
+      <i class="fa fa-moon-o"></i>
+    </aside>
+    <main>
+      <i class="fa fa-arrow-left"></i>
+      <section>
+        <h1>Clock project</h1>
+
+        <div class="all-alarms">
+          <!-- sample alarm -->
+          <div class="alarm">
+            <div>
+              <label for="read_only"> Alarm </label>
+              <input type="time" id="read_only" value="13:45" readonly />
+            </div>
+            <p class="state">Active</p>
+            <div class="actions">
+              <i class="fa fa-edit"></i>
+              <i class="fa fa-trash"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="create-alarm">
+          <input type="time" name="alarm" id="alarm" />
+
+          <div class="actions">
+            <button>Set alarm</button>
+            <button>Repeat</button>
+            <fieldset>
+              <input type="checkbox" name="day" id="monday" />
+              <input type="checkbox" name="day" id="tuesday" />
+              <input type="checkbox" name="day" id="wednesday" />
+              <input type="checkbox" name="day" id="thursday" />
+              <input type="checkbox" name="day" id="friday" />
+              <input type="checkbox" name="day" id="saturday" />
+              <input type="checkbox" name="day" id="sunday" />
+            </fieldset>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      made with <i class="fa fa-heart"></i> by <span>nalowa</span>
+    </footer>
+    <script src="./alarm.js"></script>
+  </body>
+</html>
