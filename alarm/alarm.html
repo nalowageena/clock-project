@@ -48,23 +48,46 @@
           </div>
         </div>
 
-        <div class="create-alarm">
-          <input type="time" name="alarm" id="alarm" />
-
-          <div class="actions">
-            <button>Set alarm</button>
-            <button>Repeat</button>
+        <form class="create-alarm">
+          <input type="time" name="alarm" id="alarm" value="00:00"/>
+          <!-- <div class="divider"></div>
+          <div>
+            <label for="label">Repeat</label>
             <fieldset>
-              <input type="checkbox" name="day" id="monday" />
-              <input type="checkbox" name="day" id="tuesday" />
-              <input type="checkbox" name="day" id="wednesday" />
-              <input type="checkbox" name="day" id="thursday" />
-              <input type="checkbox" name="day" id="friday" />
-              <input type="checkbox" name="day" id="saturday" />
-              <input type="checkbox" name="day" id="sunday" />
+              <label for="monday">
+                <input type="checkbox" name="day" id="monday" />M
+              </label>
+              <label for="tuesday">
+                <input type="checkbox" name="day" id="tuesday" />T
+              </label>
+              <label for="wednesday">
+                <input type="checkbox" name="day" id="wednesday" />W
+              </label>
+              <label for="thursday">
+                <input type="checkbox" name="day" id="thursday" />TH
+              </label>
+              <label for="friday">
+                <input type="checkbox" name="day" id="friday" />F
+              </label>
+              <label for="saturday">
+                <input type="checkbox" name="day" id="saturday" />SAT
+              </label>
+              <label for="sunday">
+                <input type="checkbox" name="day" id="sunday" />SUNF
+              </label>
             </fieldset>
+          </div> -->
+          <div class="divider"></div>
+          <div>
+            <label for="label">Label</label>
+            <input type="text" name="label" id="alarm-label" placeholder="e.g wake up">
           </div>
-        </div>
+
+          <div class="form-actions">
+            <button class="btn button" id="cancelBtn">Cancel</button>
+            <button class="btn button" id="saveBtn" type="submit">Save</button>
+          </div>
+        </form>
       </section>
     </main>
     <footer>

@@ -6,6 +6,7 @@
 
   --brand-font:  'Zilla Slab', serif;
   --doc-font: 'Poppins', sans-serif;
+  font-family: var(--doc-font);
 }
 
 * {
