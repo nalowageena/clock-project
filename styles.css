@@ -15,14 +15,19 @@
   box-sizing: border-box;
 }
 
+html, body{
+  height: 100%;
+  width: 100%;
+}
+
 body {
   display: grid;
   grid-template-areas:
     "aside main"
     "aside footer";
   grid-template-columns: auto auto;
-  grid-template-rows: calc(100vh - 2rem) 2rem;
-  overflow-x: hidden;
+  grid-template-rows: auto 2rem;
+  overflow: hidden;
 }
 
 aside {

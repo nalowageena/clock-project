@@ -17,7 +17,7 @@ section {
     "title title "
     "all-alarms alarm-form";
   grid-template-columns: 3fr 3fr 1fr;
-  grid-template-rows: 5rem auto;
+  grid-template-rows: 5rem 28rem;
   gap: 0.8rem;
   padding: 1rem;
 }
@@ -28,6 +28,7 @@ h1 {
 
 .all-alarms {
   grid-area: all-alarms;
+  overflow-y: auto;
 }
 
 .alarm-form {
@@ -37,6 +38,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 28rem;
 }
 
 .alarm-form input[type="time"] {
