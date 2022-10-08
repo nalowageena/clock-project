@@ -13,9 +13,9 @@ section {
   display: grid;
   /* place-items: center; */
   grid-template-areas:
-    "title title"
+    "title title "
     "all-alarms create-alarm";
-  grid-template-columns: auto 30rem;
+  grid-template-columns: 3fr 3fr 1fr;
   grid-template-rows: 5rem auto;
   gap: 0.8rem;
   padding: 1rem;
@@ -148,4 +148,41 @@ fieldset input[type="checkbox"] {
   inset 6px 3px black, 
   inset -6px -3px black;
   font-weight: bolder;
+}
+
+.alarm{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--mid-color);
+  background: rgba(255, 251, 251, 0.05);
+  backdrop-filter: blur(6.8px);
+  -webkit-backdrop-filter: blur(8.8px);
+  padding: 0.8rem 0.6rem;
+  max-width: 30rem;
+}
+
+.alarm input[type="time"]{
+  background-color: transparent;
+  border: none;
+  color: var(--brand-color);
+  padding-left: 3rem;
+  font-size: larger;
+}
+
+.alarm .actions{
+  align-self: flex-end;
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+.fa-edit, .fa-trash{
+  color: var(--mid-color);
+}
+
+.fa-edit:hover{
+  color: aqua;
+}
+
+.fa-trash:hover{
+  color: crimson;
 }
