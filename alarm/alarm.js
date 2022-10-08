@@ -1,4 +1,5 @@
 const alarmForm = document.forms[0];
+const alarmContainer = document.querySelector(".all-alarms");
 
 let alarmArray;
 
@@ -8,6 +9,7 @@ JSON.parse(localStorage.getItem("alarmArray")) !== null
   : (alarmArray = []);
 
 updateLocal(alarmArray);
+displayAlarms(alarmArray);
 
 alarmForm.addEventListener("submit", createAlarmObj);
 
@@ -22,37 +24,34 @@ function createAlarmObj(event) {
 function saveAlarm(alarm) {
   alarmArray.push(alarm);
   updateLocal(alarmArray);
-  displayAlarm(alarmArray)
+  appendAlarm(alarm);
 }
 
 function updateLocal(alarmArray) {
   localStorage.setItem("alarmArray", JSON.stringify(alarmArray));
 }
 
-function displayAlarm(alarmArray) {
+function displayAlarms(alarmArray) {
   if (alarmArray.length === 0) return;
 
-  appendAlarm(alarmArray);
+  alarmArray.forEach((alarm) => appendAlarm(alarm));
 }
 
-function appendAlarm(alarmArray) {
-  alarmArray.forEach((alarm) => {
-    const alarmSample = document.createElement("div");
-    alarmSample.className = "alarm";
-    let html = `<div>
-    <label for="read_only"> Alarm 1 </label>
-    <input type="time" id="read_only" value="13:45" readonly />
+function appendAlarm(alarm) {
+  const alarmSample = document.createElement("div");
+  alarmSample.className = "alarm";
+  let html = `<div>
+    <label for="read_only"> ${alarm.label} </label>
+    <input type="time" id="read_only" value=${alarm.time} readonly />
   </div>
   <div class="actions">
     <i class="fa fa-edit"></i>
     <i class="fa fa-trash"></i>
 </div>`;
 
-    alarmSample.innerHTML = html;
-    const alarmContainer = document.querySelector(".all-alarms");
+  alarmSample.innerHTML = html;
 
-    alarmContainer.appendChild(alarmSample);
-  });
+  alarmContainer.appendChild(alarmSample);
 }
 
 let Alarm = function (time, label) {
