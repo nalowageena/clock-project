@@ -14,7 +14,7 @@ section {
   /* place-items: center; */
   grid-template-areas:
     "title title "
-    "all-alarms create-alarm";
+    "all-alarms alarm-form";
   grid-template-columns: 3fr 3fr 1fr;
   grid-template-rows: 5rem auto;
   gap: 0.8rem;
@@ -29,8 +29,8 @@ h1 {
   grid-area: all-alarms;
 }
 
-.create-alarm {
-  grid-area: create-alarm;
+.alarm-form {
+  grid-area: alarm-form;
   background-color: black;
   padding: 1rem;
   display: flex;
@@ -38,7 +38,7 @@ h1 {
   align-items: center;
 }
 
-.create-alarm input[type="time"] {
+.alarm-form input[type="time"] {
   padding: 1.5rem 1rem;
   border: none;
   font-size: 2rem;
@@ -51,7 +51,7 @@ h1 {
   margin: 3rem 1rem;
 }
 
-.create-alarm input[type="time"]:focus {
+.alarm-form input[type="time"]:focus {
   outline: 2px solid var(--mid-color);
 }
 

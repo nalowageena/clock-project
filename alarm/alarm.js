@@ -1,4 +1,5 @@
 const alarmForm = document.forms[0];
+const editForm = document.forms[1];
 const alarmContainer = document.querySelector(".all-alarms");
 
 let alarmArray;
@@ -10,6 +11,7 @@ JSON.parse(localStorage.getItem("alarmArray")) !== null
 
 updateLocal(alarmArray);
 displayAlarms(alarmArray);
+hideEdit();
 
 alarmForm.addEventListener("submit", createAlarmObj);
 
@@ -53,6 +55,7 @@ function appendAlarm(alarm) {
   alarmContainer.appendChild(alarmSample);
 
   deleteAlarm(alarmArray);
+  editAlarm(alarmArray);
 }
 
 function deleteAlarm(alarmArray) {
@@ -66,6 +69,35 @@ function deleteAlarm(alarmArray) {
       updateLocal(alarmArray);
     });
   });
+}
+
+function editAlarm(alarmArray) {
+  const editBtn = document.querySelectorAll(".fa-edit");
+  Array.from(editBtn).forEach((btn) => {
+    btn.addEventListener("click", () => {
+      showEdit();
+      let alarm = btn.parentElement.parentElement;
+      let alarmIndex = [...alarmContainer.children].indexOf(alarm);
+      editForm.alarm.value = alarmArray[alarmIndex].time;
+      editForm.label.value = alarmArray[alarmIndex].label;
+
+      editForm.addEventListener("submit", ()=>{
+        alarmArray[alarmIndex].time = editForm.alarm.value;
+        alarmArray[alarmIndex].label = editForm.label.value;
+        updateLocal(alarmArray);
+      });      
+    });
+  });
+}
+
+function hideEdit() {
+  editForm.style.display = "none";
+  alarmForm.style.display = "flex";
+}
+
+function showEdit() {
+  alarmForm.style.display = "none";
+  editForm.style.display = "flex";
 }
 
 let Alarm = function (time, label) {
