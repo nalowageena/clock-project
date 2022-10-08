@@ -50,8 +50,22 @@ function appendAlarm(alarm) {
 </div>`;
 
   alarmSample.innerHTML = html;
-
   alarmContainer.appendChild(alarmSample);
+
+  deleteAlarm(alarmArray);
+}
+
+function deleteAlarm(alarmArray) {
+  const deleteBtn = document.querySelectorAll(".fa-trash");
+  Array.from(deleteBtn).forEach((btn) => {
+    btn.addEventListener("click", () => {
+      let alarm = btn.parentElement.parentElement;
+      let alarmIndex = [...alarmContainer.children].indexOf(alarm);
+      alarmContainer.removeChild(alarm);
+      alarmArray.splice(alarmIndex, 1);
+      updateLocal(alarmArray);
+    });
+  });
 }
 
 let Alarm = function (time, label) {
