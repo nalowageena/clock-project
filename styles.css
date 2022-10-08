@@ -22,7 +22,7 @@ body {
     "aside footer";
   grid-template-columns: auto auto;
   grid-template-rows: calc(100vh - 2rem) 2rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 aside {

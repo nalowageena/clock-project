@@ -2,9 +2,10 @@ main {
   display: flex;
   flex-direction: column;
 }
-main .fa-arrow-left {
+main .back {
   align-self: flex-start;
   padding: 0.8rem;
+  color: white;
 }
 
 section {
@@ -159,6 +160,7 @@ fieldset input[type="checkbox"] {
   -webkit-backdrop-filter: blur(8.8px);
   padding: 0.8rem 0.6rem;
   max-width: 30rem;
+  margin-bottom: 0.6rem;
 }
 
 .alarm input[type="time"]{
