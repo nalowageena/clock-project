@@ -2,9 +2,10 @@ main {
   display: flex;
   flex-direction: column;
 }
-main .fa-arrow-left {
+main .back {
   align-self: flex-start;
   padding: 0.8rem;
+  color: white;
 }
 
 section {
@@ -16,7 +17,7 @@ section {
     "title title "
     "all-alarms alarm-form";
   grid-template-columns: 3fr 3fr 1fr;
-  grid-template-rows: 5rem auto;
+  grid-template-rows: 5rem 28rem;
   gap: 0.8rem;
   padding: 1rem;
 }
@@ -27,6 +28,7 @@ h1 {
 
 .all-alarms {
   grid-area: all-alarms;
+  overflow-y: auto;
 }
 
 .alarm-form {
@@ -36,6 +38,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-height: 28rem;
 }
 
 .alarm-form input[type="time"] {
@@ -159,6 +162,7 @@ fieldset input[type="checkbox"] {
   -webkit-backdrop-filter: blur(8.8px);
   padding: 0.8rem 0.6rem;
   max-width: 30rem;
+  margin-bottom: 0.6rem;
 }
 
 .alarm input[type="time"]{

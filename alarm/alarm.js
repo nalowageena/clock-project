@@ -20,6 +20,10 @@ function createAlarmObj(event) {
   const alarmDataObj = new Alarm();
   alarmDataObj.time = alarmForm.alarm.value;
   alarmDataObj.label = alarmForm.label.value;
+
+  if (alarmDataObj.label == '') {
+    alarmDataObj.label = 'New alarm'
+  }
   saveAlarm(alarmDataObj);
 }
 
