@@ -56,6 +56,7 @@ function appendAlarm(alarm) {
 
   deleteAlarm(alarmArray);
   editAlarm(alarmArray);
+  cancel()
 }
 
 function deleteAlarm(alarmArray) {
@@ -90,6 +91,17 @@ function editAlarm(alarmArray) {
   });
 }
 
+function cancel() {
+  let cancelBtn = document.querySelectorAll('#cancelBtn')
+  Array.from(cancelBtn).forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      hideEdit();
+      alarmForm.alarm.value = '00:00';
+      alarmForm.label.value = '';
+    })
+  })
+}
+
 function hideEdit() {
   editForm.style.display = "none";
   alarmForm.style.display = "flex";
@@ -99,6 +111,7 @@ function showEdit() {
   alarmForm.style.display = "none";
   editForm.style.display = "flex";
 }
+
 
 let Alarm = function (time, label) {
   this.time = time;
