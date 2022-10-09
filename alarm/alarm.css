@@ -169,7 +169,6 @@ fieldset input[type="checkbox"] {
   background-color: transparent;
   border: none;
   color: var(--brand-color);
-  padding-left: 3rem;
   font-size: larger;
 }
 

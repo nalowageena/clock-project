@@ -17,11 +17,9 @@ alarmForm.addEventListener("submit", createAlarmObj);
 
 function createAlarmObj(event) {
   event.preventDefault();
-  const alarmDataObj = new Alarm();
-  alarmDataObj.time = alarmForm.alarm.value;
-  alarmDataObj.label = alarmForm.label.value;
+  const alarmDataObj = new Alarm(alarmForm.alarm.value, alarmForm.label.value);
 
-  if (alarmDataObj.label == '') {
+  if (alarmDataObj.label === '') {
     alarmDataObj.label = 'New alarm'
   }
   saveAlarm(alarmDataObj);
@@ -46,14 +44,13 @@ function displayAlarms(alarmArray) {
 function appendAlarm(alarm) {
   const alarmSample = document.createElement("div");
   alarmSample.className = "alarm";
-  let html = `<div>
-    <label for="read_only"> ${alarm.label} </label>
+  let html = `
+    <label for="read_only"> ${processLabel(alarm.label)} </label>
     <input type="time" id="read_only" value=${alarm.time} readonly />
-  </div>
-  <div class="actions">
-    <i class="fa fa-edit"></i>
-    <i class="fa fa-trash"></i>
-</div>`;
+    <div class="actions">
+      <i class="fa fa-edit"></i>
+      <i class="fa fa-trash"></i>
+    </div>`;
 
   alarmSample.innerHTML = html;
   alarmContainer.appendChild(alarmSample);
@@ -68,7 +65,7 @@ function deleteAlarm(alarmArray) {
   Array.from(deleteBtn).forEach((btn) => {
     btn.addEventListener("click", () => {
       let alarm = btn.parentElement.parentElement;
-      let alarmIndex = [...alarmContainer.children].indexOf(alarm);
+      let alarmIndex = Array.from(alarmContainer.children).indexOf(alarm);
       alarmContainer.removeChild(alarm);
       alarmArray.splice(alarmIndex, 1);
       updateLocal(alarmArray);
@@ -116,6 +113,13 @@ function showEdit() {
   editForm.style.display = "flex";
 }
 
+function processLabel(label) {
+  if (label.length>14) {
+    return label.slice(0,13) + '...'
+  }
+  return label
+}
+
 
 let Alarm = function (time, label) {
   this.time = time;
@@ -125,9 +129,9 @@ let Alarm = function (time, label) {
 Alarm.prototype = {
   constructor: Alarm,
   getTime: function () {
-    return question;
+    return time;
   },
   getLabel: function () {
-    return this.answer;
+    return this.label;
   },
 };
