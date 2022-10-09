@@ -86,6 +86,10 @@ function editAlarm(alarmArray) {
       editForm.addEventListener("submit", ()=>{
         alarmArray[alarmIndex].time = editForm.alarm.value;
         alarmArray[alarmIndex].label = editForm.label.value;
+
+        if (editForm.label.value === '') {
+          alarmArray[alarmIndex].label = 'New alarm'
+        }
         updateLocal(alarmArray);
       });      
     });
