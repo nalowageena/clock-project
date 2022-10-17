@@ -8,6 +8,7 @@ let alarmArray = [];
 let Alarm = function (time, label) {
   this.time = time;
   this.label = label;
+  this.active = false;
 };
 
 Alarm.prototype = {
@@ -19,10 +20,14 @@ Alarm.prototype = {
     return this.label;
   },
   ring: function (currentTime) {
-    if (currentTime >= this.getTime()) {
+    if (currentTime === this.getTime() && this.active == false) {
+      this.active = true;
       displayModal(this);
     }
   },
+  stop: function () {
+    this.active = true
+  }
 };
 
 // check for alarmArr in localstorage.
@@ -81,7 +86,6 @@ function appendAlarm(alarm) {
   deleteAlarm(alarmArray);
   editAlarm(alarmArray);
   cancel();
-  checkAlarm(alarmArray);
 }
 
 function deleteAlarm(alarmArray) {
@@ -152,9 +156,10 @@ function displayModal(alarm) {
   const modal = document.querySelector(".modal-container");
 
   modal.style.display = "block";
+  console.log("ring");
 }
 
-function getCurrentTime(alarm) {
+function getCurrentTime() {
   const currentDate = new Date();
   let hours = currentDate.getHours();
   let minutes = currentDate.getMinutes();
@@ -165,14 +170,15 @@ function getCurrentTime(alarm) {
     hours = "0" + hours;
   }
   let currentTime = hours + ":" + minutes;
-  console.log(alarm.label);
-  alarm.ring(currentTime);
+  console.log(currentTime);
+  checkAlarm(alarmArray, currentTime)
 }
-setInterval(getCurrentTime, 1000);
 
-function checkAlarm(alarmArray) {
+setInterval(getCurrentTime, 1000)
+
+function checkAlarm(alarmArray, currentTime) {
   alarmArray.forEach((alarm) => {
     console.log(alarm.label);
-    getCurrentTime(alarm);
+    alarm.ring(currentTime);
   });
 }
