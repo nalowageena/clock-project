@@ -1,0 +1,26 @@
+.modal-container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 1; /* Sit on top */
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: white;
+}
+
+.modal {
+  background-color: black;
+  margin: 20% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid var(--brand-color);
+  width: 80%;
+}
+
+.modal input[type="time"]{
+    background-color: transparent;
+    color: white;
+    border: none;
+}

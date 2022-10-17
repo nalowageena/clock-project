@@ -2,12 +2,35 @@ const alarmForm = document.forms[0];
 const editForm = document.forms[1];
 const alarmContainer = document.querySelector(".all-alarms");
 
-let alarmArray;
+let alarmArray = [];
+
+// create alarm constructor and define its prototype
+let Alarm = function (time, label) {
+  this.time = time;
+  this.label = label;
+};
+
+Alarm.prototype = {
+  constructor: Alarm,
+  getTime: function () {
+    return this.time;
+  },
+  getLabel: function () {
+    return this.label;
+  },
+  ring: function (currentTime) {
+    if (currentTime >= this.getTime()) {
+      displayModal(this);
+    }
+  },
+};
 
 // check for alarmArr in localstorage.
-JSON.parse(localStorage.getItem("alarmArray")) !== null
-  ? (alarmArray = JSON.parse(localStorage.getItem("alarmArray")))
-  : (alarmArray = []);
+if (JSON.parse(localStorage.getItem("alarmArray")) !== null) {
+  JSON.parse(localStorage.getItem("alarmArray")).forEach((alarm) => {
+    alarmArray.push(new Alarm(alarm.time, alarm.label));
+  });
+}
 
 updateLocal(alarmArray);
 displayAlarms(alarmArray);
@@ -19,8 +42,8 @@ function createAlarmObj(event) {
   event.preventDefault();
   const alarmDataObj = new Alarm(alarmForm.alarm.value, alarmForm.label.value);
 
-  if (alarmDataObj.label === '') {
-    alarmDataObj.label = 'New alarm'
+  if (alarmDataObj.label === "") {
+    alarmDataObj.label = "New alarm";
   }
   saveAlarm(alarmDataObj);
 }
@@ -57,7 +80,8 @@ function appendAlarm(alarm) {
 
   deleteAlarm(alarmArray);
   editAlarm(alarmArray);
-  cancel()
+  cancel();
+  checkAlarm(alarmArray);
 }
 
 function deleteAlarm(alarmArray) {
@@ -83,28 +107,28 @@ function editAlarm(alarmArray) {
       editForm.alarm.value = alarmArray[alarmIndex].time;
       editForm.label.value = alarmArray[alarmIndex].label;
 
-      editForm.addEventListener("submit", ()=>{
+      editForm.addEventListener("submit", () => {
         alarmArray[alarmIndex].time = editForm.alarm.value;
         alarmArray[alarmIndex].label = editForm.label.value;
 
-        if (editForm.label.value === '') {
-          alarmArray[alarmIndex].label = 'New alarm'
+        if (editForm.label.value === "") {
+          alarmArray[alarmIndex].label = "New alarm";
         }
         updateLocal(alarmArray);
-      });      
+      });
     });
   });
 }
 
 function cancel() {
-  let cancelBtn = document.querySelectorAll('#cancelBtn')
-  Array.from(cancelBtn).forEach(btn => {
-    btn.addEventListener('click', ()=>{
+  let cancelBtn = document.querySelectorAll("#cancelBtn");
+  Array.from(cancelBtn).forEach((btn) => {
+    btn.addEventListener("click", () => {
       hideEdit();
-      alarmForm.alarm.value = '00:00';
-      alarmForm.label.value = '';
-    })
-  })
+      alarmForm.alarm.value = "00:00";
+      alarmForm.label.value = "";
+    });
+  });
 }
 
 function hideEdit() {
@@ -118,24 +142,37 @@ function showEdit() {
 }
 
 function processLabel(label) {
-  if (label.length>14) {
-    return label.slice(0,13) + '...'
+  if (label.length > 14) {
+    return label.slice(0, 13) + "...";
   }
-  return label
+  return label;
 }
 
+function displayModal(alarm) {
+  const modal = document.querySelector(".modal-container");
 
-let Alarm = function (time, label) {
-  this.time = time;
-  this.label = label;
-};
+  modal.style.display = "block";
+}
 
-Alarm.prototype = {
-  constructor: Alarm,
-  getTime: function () {
-    return time;
-  },
-  getLabel: function () {
-    return this.label;
-  },
-};
+function getCurrentTime(alarm) {
+  const currentDate = new Date();
+  let hours = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+  if (minutes / 10 < 1) {
+    minutes = "0" + minutes;
+  }
+  if (hours / 10 < 1) {
+    hours = "0" + hours;
+  }
+  let currentTime = hours + ":" + minutes;
+  console.log(alarm.label);
+  alarm.ring(currentTime);
+}
+setInterval(getCurrentTime, 1000);
+
+function checkAlarm(alarmArray) {
+  alarmArray.forEach((alarm) => {
+    console.log(alarm.label);
+    getCurrentTime(alarm);
+  });
+}

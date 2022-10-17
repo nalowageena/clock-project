@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="./alarm.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,500&family=Zilla+Slab:wght@600;700&family=Orbitron:wght@600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Clock project</title>
-  </head>
-  <body>
-    <aside>
-      <div>
-        <i class="fa fa-volume-up"></i>
-        <!-- <input type="range" min="0" max="100"> -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="./alarm.css" />
+  <link rel="stylesheet" href="./alarm-modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,500&family=Zilla+Slab:wght@600;700&family=Orbitron:wght@600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <title>Clock project</title>
+</head>
+
+<body>
+  <aside>
+    <div>
+      <i class="fa fa-volume-up"></i>
+      <!-- <input type="range" min="0" max="100"> -->
+    </div>
+    <!-- toggle light mode -->
+    <i class="fa fa-moon-o"></i>
+  </aside>
+  <main>
+    <a href="/index.html" class="back"><i class="fa fa-arrow-left"></i></a>
+    <section>
+      <h1>Clock project</h1>
+
+      <div class="all-alarms">
+        <!-- sample alarm -->
+
       </div>
-      <!-- toggle light mode -->
-      <i class="fa fa-moon-o"></i>
-    </aside>
-    <main>
-      <a href="/index.html" class="back"><i class="fa fa-arrow-left"></i></a>
-      <section>
-        <h1>Clock project</h1>
 
-        <div class="all-alarms">
-          <!-- sample alarm -->
-          
+      <form class="alarm-form">
+        <input type="time" name="alarm" id="alarm" value="00:00" />
+        <!-- <div class="divider"></div>
+          <div>
+            <label for="label">Repeat</label>
+            <fieldset>
+              <label for="monday">
+                <input type="checkbox" name="day" id="monday" />M
+              </label>
+              <label for="tuesday">
+                <input type="checkbox" name="day" id="tuesday" />T
+              </label>
+              <label for="wednesday">
+                <input type="checkbox" name="day" id="wednesday" />W
+              </label>
+              <label for="thursday">
+                <input type="checkbox" name="day" id="thursday" />TH
+              </label>
+              <label for="friday">
+                <input type="checkbox" name="day" id="friday" />F
+              </label>
+              <label for="saturday">
+                <input type="checkbox" name="day" id="saturday" />SAT
+              </label>
+              <label for="sunday">
+                <input type="checkbox" name="day" id="sunday" />SUNF
+              </label>
+            </fieldset>
+          </div> -->
+        <div class="divider"></div>
+        <div>
+          <label for="label">Label</label>
+          <input type="text" name="label" placeholder="e.g wake up">
         </div>
 
-        <form class="alarm-form">
-          <input type="time" name="alarm" id="alarm" value="00:00"/>
-          <!-- <div class="divider"></div>
+        <div class="form-actions">
+          <button class="btn button" id="cancelBtn" type="button">Cancel</button>
+          <button class="btn button" id="saveBtn" type="submit">Save</button>
+        </div>
+      </form>
+
+      <form class="alarm-form" style="display: none;">
+        <input type="time" name="alarm" id="alarm" value="00:00" />
+        <!-- <div class="divider"></div>
           <div>
             <label for="label">Repeat</label>
             <fieldset>
@@ -67,64 +107,42 @@
               </label>
             </fieldset>
           </div> -->
-          <div class="divider"></div>
-          <div>
-            <label for="label">Label</label>
-            <input type="text" name="label" placeholder="e.g wake up">
-          </div>
+        <div class="divider"></div>
+        <div>
+          <label for="label">Label</label>
+          <input type="text" name="label" id="alarm-label" placeholder="e.g wake up">
+        </div>
 
-          <div class="form-actions">
-            <button class="btn button" id="cancelBtn" type="button">Cancel</button>
-            <button class="btn button" id="saveBtn" type="submit">Save</button>
-          </div>
-        </form>
+        <div class="form-actions">
+          <button class="btn button" id="cancelBtn" type="button">Cancel</button>
+          <button class="btn button" id="saveBtn" type="submit">Edit</button>
+        </div>
+      </form>
 
-        <form class="alarm-form" style="display: none;">
-          <input type="time" name="alarm" id="alarm" value="00:00"/>
-          <!-- <div class="divider"></div>
-          <div>
-            <label for="label">Repeat</label>
-            <fieldset>
-              <label for="monday">
-                <input type="checkbox" name="day" id="monday" />M
-              </label>
-              <label for="tuesday">
-                <input type="checkbox" name="day" id="tuesday" />T
-              </label>
-              <label for="wednesday">
-                <input type="checkbox" name="day" id="wednesday" />W
-              </label>
-              <label for="thursday">
-                <input type="checkbox" name="day" id="thursday" />TH
-              </label>
-              <label for="friday">
-                <input type="checkbox" name="day" id="friday" />F
-              </label>
-              <label for="saturday">
-                <input type="checkbox" name="day" id="saturday" />SAT
-              </label>
-              <label for="sunday">
-                <input type="checkbox" name="day" id="sunday" />SUNF
-              </label>
-            </fieldset>
-          </div> -->
-          <div class="divider"></div>
-          <div>
-            <label for="label">Label</label>
-            <input type="text" name="label" id="alarm-label" placeholder="e.g wake up">
-          </div>
+    </section>
+  </main>
+  <footer>
+    made with <i class="fa fa-heart"></i> by <span>nalowa</span>
+  </footer>
 
-          <div class="form-actions">
-            <button class="btn button" id="cancelBtn" type="button">Cancel</button>
-            <button class="btn button" id="saveBtn" type="submit">Edit</button>
-          </div>
-        </form>
+  <div class="modal-container">
+    <div class="modal">
+      <input type="time" id="read_only" value=10:00 readonly />
+      <label for="read_only"> Wake up </label>
+      <div class="actions">
+        <label for="snooze">Snooze</label>
+        <select name="snooze" id="snooze">
+          <option value="10">Off</option>
+          <option value="10">After 10 mins</option>
+          <option value="10">After 20 mins</option>
+        </select>
+        <button>Stop</button>
+      </div>
+    </div>
+  </div>
 
-      </section>
-    </main>
-    <footer>
-      made with <i class="fa fa-heart"></i> by <span>nalowa</span>
-    </footer>
-    <script src="./alarm.js"></script>
-  </body>
+  <script src="./alarm.js"></script>
+  <script src="./alarm-modal.js"></script>
+</body>
+
 </html>
