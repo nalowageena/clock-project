@@ -3,6 +3,7 @@ const editForm = document.forms[1];
 const alarmContainer = document.querySelector(".all-alarms");
 
 let alarmArray = [];
+let alarmSound = new Audio('http://soundbible.com/grab.php?id=2061&type=mp3');
 
 // create alarm constructor and define its prototype
 let Alarm = function (time, label) {
@@ -23,11 +24,9 @@ Alarm.prototype = {
     if (currentTime === this.getTime() && this.active == false) {
       this.active = true;
       displayModal(this);
+      playAlarmSound(alarmSound)
     }
   },
-  stop: function () {
-    this.active = true
-  }
 };
 
 // check for alarmArr in localstorage.
@@ -181,4 +180,16 @@ function checkAlarm(alarmArray, currentTime) {
     console.log(alarm.label);
     alarm.ring(currentTime);
   });
+}
+
+function playAlarmSound(alarmSound) {
+  alarmSound.play();
+  alarmSound.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+}
+
+function stopAlarmSound(alarmSound) {
+  alarmSound.stop()
 }
