@@ -13,14 +13,34 @@
 
 .modal {
   background-color: black;
-  margin: 20% auto; /* 15% from the top and centered */
-  padding: 20px;
+  margin: 15% auto;
+  padding: 2rem;
   border: 1px solid var(--brand-color);
-  width: 80%;
+  max-width: 30rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.modal img{
+  height: 4rem;
+  width: 4rem;
 }
 
 .modal input[type="time"]{
     background-color: transparent;
     color: white;
     border: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 3rem;
+}
+
+.modal #alarm-stop{
+  background-color: var(--brand-color);
+  border: none;
 }

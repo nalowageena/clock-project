@@ -2,6 +2,8 @@ const alarmForm = document.forms[0];
 const editForm = document.forms[1];
 const alarmContainer = document.querySelector(".all-alarms");
 
+const modal = document.querySelector('.modal-container');
+
 let alarmArray = [];
 let alarmSound = new Audio('http://soundbible.com/grab.php?id=2061&type=mp3');
 
@@ -9,7 +11,7 @@ let alarmSound = new Audio('http://soundbible.com/grab.php?id=2061&type=mp3');
 let Alarm = function (time, label) {
   this.time = time;
   this.label = label;
-  this.active = false;
+  this.active = true;
 };
 
 Alarm.prototype = {
@@ -21,8 +23,8 @@ Alarm.prototype = {
     return this.label;
   },
   ring: function (currentTime) {
-    if (currentTime === this.getTime() && this.active == false) {
-      this.active = true;
+    if (currentTime === this.getTime() && this.active == true) {
+      this.active = false;
       displayModal(this);
       playAlarmSound(alarmSound)
     }
@@ -152,10 +154,11 @@ function processLabel(label) {
 }
 
 function displayModal(alarm) {
-  const modal = document.querySelector(".modal-container");
-
   modal.style.display = "block";
-  console.log("ring");
+  modal.querySelector('input').value = alarm.time;
+  modal.querySelector('label').innerText = alarm.label;
+
+  stopAlarmSound(alarmSound, alarm)
 }
 
 function getCurrentTime() {
@@ -190,6 +193,12 @@ function playAlarmSound(alarmSound) {
 }, false);
 }
 
-function stopAlarmSound(alarmSound) {
-  alarmSound.stop()
+function stopAlarmSound(alarmSound, alarm) {
+  const stopBtn = document.querySelector('#alarm-stop')
+
+  stopBtn.addEventListener('click', ()=>{
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+    modal.style.display='none';
+  })
 }

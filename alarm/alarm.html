@@ -127,22 +127,14 @@
 
   <div class="modal-container">
     <div class="modal">
-      <input type="time" id="read_only" value=10:00 readonly />
-      <label for="read_only"> Wake up </label>
-      <div class="actions">
-        <label for="snooze">Snooze</label>
-        <select name="snooze" id="snooze">
-          <option value="10">Off</option>
-          <option value="10">After 10 mins</option>
-          <option value="10">After 20 mins</option>
-        </select>
-        <button id="alarm-stop">Stop</button>
-      </div>
+      <img src="/assets/alarm-clock-svgrepo-com.svg" alt="alarm">
+      <input type="time" id="read_only" readonly />
+      <label for="read_only"></label>      
+        <button id="alarm-stop" class="btn button">Stop</button>
     </div>
   </div>
 
   <script src="./alarm.js"></script>
-  <script src="./alarm-modal.js"></script>
 </body>
 
 </html>
