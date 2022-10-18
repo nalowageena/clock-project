@@ -1,0 +1,46 @@
+.modal-container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  z-index: 1; /* Sit on top */
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: white;
+}
+
+.modal {
+  background-color: black;
+  margin: 15% auto;
+  padding: 2rem;
+  border: 1px solid var(--brand-color);
+  max-width: 30rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.modal img{
+  height: 4rem;
+  width: 4rem;
+}
+
+.modal input[type="time"]{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 3rem;
+}
+
+.modal #alarm-stop{
+  background-color: var(--brand-color);
+  border: none;
+}
