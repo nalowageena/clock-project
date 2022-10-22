@@ -197,7 +197,7 @@ function playAlarmSound(alarmSound) {
   );
 }
 
-function stopAlarmSound(alarmSound, alarm) {
+function stopAlarmSound(alarmSound) {
   const stopBtn = document.querySelector("#alarm-stop");
 
   stopBtn.addEventListener("click", () => {
