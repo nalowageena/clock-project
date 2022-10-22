@@ -1,10 +1,11 @@
 main {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0.8rem;
+  gap: 0.8rem;
 }
 main .back {
-  align-self: flex-start;
-  padding: 0.8rem;
   color: white;
 }
 
@@ -12,18 +13,11 @@ section {
   width: 100%;
   height: 100%;
   display: grid;
-  /* place-items: center; */
   grid-template-areas:
-    "title title "
     "all-alarms alarm-form";
   grid-template-columns: 3fr 3fr 1fr;
-  grid-template-rows: 5rem 28rem;
   gap: 0.8rem;
   padding: 1rem;
-}
-
-h1 {
-  grid-area: title;
 }
 
 .all-alarms {
