@@ -1,0 +1,124 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+  main .back {
+    color: white;
+  }
+  
+  section {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-areas:
+      "stopwatch-form stopwatch-form";
+    grid-template-columns: 3fr 3fr;
+    padding: 1rem;
+  }
+  
+  .stopwatch-form {
+    grid-area: stopwatch-form;
+    background-color: black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 28rem;
+    min-width: 32rem;
+    place-items: center;
+
+  }
+  
+ .custom-clock{
+    padding: 1.5rem 1rem;
+    border: none;
+    font-size: 2rem;
+    background-color: var(--brand-color);
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    text-align: center;
+    min-width: 22rem;
+    margin: 3rem 1rem;
+  }
+
+  input[type="time"]:focus {
+    outline: 2px solid var(--mid-color);
+  }
+
+  .form-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 2rem;
+  }
+  
+   .btn {
+    padding: 0.7rem 1rem;
+    min-width: 5rem;
+    position: relative;
+  }
+  
+  #start {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  #start:hover {
+    color: black;
+    background-color: white;
+    box-shadow: inset 2px 1px black, 
+    inset -2px -1px black, 
+    inset 4px 2px white, 
+    inset -4px -2px white,
+    inset 6px 3px black, 
+    inset -6px -3px black;
+    font-weight: bolder;
+  }
+  
+  #stop {
+    border: 1px solid var(--brand-color);
+    color: var(--brand-color);
+    background: rgba(255, 251, 251, 0.05);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  #stop:hover {
+    color: black;
+    background-color: var(--brand-color);
+    box-shadow: inset 2px 1px black, 
+    inset -2px -1px black, 
+    inset 4px 2px var(--brand-color), 
+    inset -4px -2px var(--brand-color),
+    inset 6px 3px black, 
+    inset -6px -3px black;
+    font-weight: bolder;
+  }
+
+  #reset {
+    border: 1px solid var(--mid-color);
+    color: var(--mid-color);
+    background: rgba(255, 251, 251, 0.05);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  #reset:hover {
+    color: black;
+    background-color: var(--mid-color);
+    box-shadow: inset 2px 1px black, 
+    inset -2px -1px black, 
+    inset 4px 2px var(--mid-color), 
+    inset -4px -2px var(--mid-color),
+    inset 6px 3px black, 
+    inset -6px -3px black;
+    font-weight: bolder;
+  }

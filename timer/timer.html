@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./timer.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300;1,500&family=Zilla+Slab:wght@600;700&family=Orbitron:wght@600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <title>Clock project</title>
+</head>
+
+<body>
+    <aside>
+        <div>
+            <i class="fa fa-volume-up"></i>
+            <!-- <input type="range" min="0" max="100"> -->
+        </div>
+        <!-- toggle light mode -->
+        <i class="fa fa-moon-o"></i>
+    </aside>
+    <main>
+        <a href="/index.html" class="back"><i class="fa fa-arrow-left"></i></a>
+        <h1>Clock project</h1>
+        <section>
+            <form class="stopwatch-form">
+                <div class="custom-clock">
+                    <p class="time">
+                        <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
+                    </p>
+                </div>
+                <div class="form-actions">
+                    <button class="btn button" id="start" type="button">Start</button>
+                    <button class="btn button" id="reset" type="button">Reset</button>
+                    <button class="btn button" id="stop" type="button">Stop</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        made with <i class="fa fa-heart"></i> by <span>nalowa</span>
+    </footer>
+
+    <script src="./timer.js"></script>
+</body>
+
+</html>
