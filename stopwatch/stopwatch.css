@@ -101,3 +101,24 @@ main {
     inset -6px -3px black;
     font-weight: bolder;
   }
+
+  #reset {
+    border: 1px solid var(--mid-color);
+    color: var(--mid-color);
+    background: rgba(255, 251, 251, 0.05);
+    backdrop-filter: blur(6.8px);
+    -webkit-backdrop-filter: blur(8.8px);
+    transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  #reset:hover {
+    color: black;
+    background-color: var(--mid-color);
+    box-shadow: inset 2px 1px black, 
+    inset -2px -1px black, 
+    inset 4px 2px var(--mid-color), 
+    inset -4px -2px var(--mid-color),
+    inset 6px 3px black, 
+    inset -6px -3px black;
+    font-weight: bolder;
+  }
