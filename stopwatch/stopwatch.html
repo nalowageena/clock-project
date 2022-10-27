@@ -30,23 +30,25 @@
         <a href="/index.html" class="back"><i class="fa fa-arrow-left"></i></a>
         <h1>Clock project</h1>
         <section>
-
             <form class="stopwatch-form">
-                <input type="time" name="stopwatch" id="stopwatch" value="00:00" readonly />
-                <div class="divider"></div>
+                <div class="custom-clock">
+                    <p class="time">
+                        <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
+                    </p>
+                </div>
                 <div class="form-actions">
                     <button class="btn button" id="start" type="button">Start</button>
-                    <button class="btn button" id="stop" type="submit">Stop</button>
+                    <button class="btn button" id="reset" type="button">Reset</button>
+                    <button class="btn button" id="stop" type="button">Stop</button>
                 </div>
             </form>
-
         </section>
     </main>
     <footer>
         made with <i class="fa fa-heart"></i> by <span>nalowa</span>
     </footer>
 
-    <script src="./alarm.js"></script>
+    <script src="./stopwatch.js"></script>
 </body>
 
 </html>

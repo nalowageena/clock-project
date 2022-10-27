@@ -28,12 +28,12 @@ main {
     flex-direction: column;
     align-items: center;
     max-height: 28rem;
-    max-width: max-content;
+    min-width: 32rem;
     place-items: center;
 
   }
   
- input[type="time"] {
+ .custom-clock{
     padding: 1.5rem 1rem;
     border: none;
     font-size: 2rem;
@@ -42,7 +42,7 @@ main {
     font-family: "Orbitron", sans-serif;
     font-weight: 800;
     text-align: center;
-    max-width: 22rem;
+    min-width: 22rem;
     margin: 3rem 1rem;
   }
 
