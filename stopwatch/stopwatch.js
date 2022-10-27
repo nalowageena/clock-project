@@ -2,6 +2,8 @@ let startBtn = document.querySelector("#start");
 let stopBtn = document.querySelector("#stop");
 let resetBtn = document.querySelector("#reset");
 
+let tickSound = new Audio("http://soundbible.com/grab.php?id=2044&type=mp3");
+
 let time = document.querySelector(".time");
 let secondDisplay = document.querySelector(".second");
 let minuteDisplay = document.querySelector(".minute");
@@ -26,6 +28,7 @@ function startWatch() {
 
 function stopWatch() {
   clearInterval(intervalId);
+  stopSound(tickSound);
 }
 
 function resetWatch() {
@@ -34,6 +37,7 @@ function resetWatch() {
   minute = 0;
   hour = 0;
   displayTime();
+  stopSound(tickSound);
 }
 
 function updateTime() {
@@ -48,7 +52,7 @@ function updateTime() {
     minute = 0;
     hour++;
   }
-
+  playSound(tickSound)
   displayTime();
 }
 
@@ -63,4 +67,12 @@ function format(num) {
     num = "0" + num;
   }
   return num;
+}
+
+function playSound(tickSound) {
+  tickSound.play();
+}
+
+function stopSound(tickSound) {
+    tickSound.pause();
 }
