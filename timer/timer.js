@@ -2,6 +2,7 @@ let timerForm = document.forms[0];
 let startBtn = document.querySelector("#start");
 let stopBtn = document.querySelector("#stop");
 let resetBtn = document.querySelector("#reset");
+const modal = document.querySelector(".modal-container");
 
 let tickSound = new Audio("http://soundbible.com/grab.php?id=2044&type=mp3");
 
@@ -65,6 +66,7 @@ function updateTime() {
 
   if (second == 0 && minute == 0 && hour == 0) {
     stopWatch();
+    displayModal();
   }
 }
 
@@ -88,3 +90,13 @@ function playSound(tickSound) {
 function stopSound(tickSound) {
   tickSound.pause();
 }
+
+function displayModal() {
+  modal.style.display = "block";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
