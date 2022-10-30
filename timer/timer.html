@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="./timer.css" />
+    <link rel="stylesheet" href="/alarm/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,14 +31,26 @@
         <a href="/index.html" class="back"><i class="fa fa-arrow-left"></i></a>
         <h1>Clock project</h1>
         <section>
-            <form class="stopwatch-form">
+            <form class="timer-form">
                 <div class="custom-clock">
                     <p class="time">
                         <span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span>
                     </p>
                 </div>
+
+                <p class="inputTimer">
+                    Set timer for:
+                    <span>
+                        <input type="number" name="hour" id="hour" min="0" max="23" value="0">
+                        <label for="hour">hr</label>
+                        <input type="number" name="minute" id="minute" min="0" max="59" value="0">
+                        <label for="minute">min</label>
+                        <input type="number" name="second" id="second" min="0" max="59" value="0">
+                        <label for="second">sec</label>
+                    </span>
+                </p>
                 <div class="form-actions">
-                    <button class="btn button" id="start" type="button">Start</button>
+                    <button class="btn button" id="start" type="submit">Start</button>
                     <button class="btn button" id="reset" type="button">Reset</button>
                     <button class="btn button" id="stop" type="button">Stop</button>
                 </div>

@@ -122,3 +122,12 @@ main {
     inset -6px -3px black;
     font-weight: bolder;
   }
+
+  .inputTimer {
+    color: var(--mid-color);
+    margin-bottom: 2rem;
+  }
+
+  .inputTimer input[type="number"]{
+    min-width: max-content;
+  }
