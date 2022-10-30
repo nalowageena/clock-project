@@ -37,20 +37,22 @@ aside {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: start;
   gap: 2.5rem;
   min-width: 3rem;
   transition: min-width 1s, gap 2s;
-}
-aside:hover {
-  min-width: 20rem;
-  justify-content: center;
-  gap: 6rem;
+
+  white-space: nowrap;
 }
 
-aside div {
-  padding-top: 2rem;
+aside li{
+  list-style: none;
+  padding: 1.2rem 0.3rem;
+  cursor: pointer;
+}
+aside:hover {
+  min-width: 10rem;
+  gap: 6rem;
 }
 
 aside input[type="range"] {
@@ -58,7 +60,13 @@ aside input[type="range"] {
 }
 
 aside i {
-  cursor: pointer;
+  margin-right: 1.5rem;
+  
+}
+
+aside li:hover i{
+  color: var(--mid-color);
+  font-size: larger;
 }
 
 main {
