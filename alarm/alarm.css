@@ -5,8 +5,20 @@ main {
   padding: 0.8rem;
   gap: 0.8rem;
 }
-main .back {
-  color: white;
+
+.links{
+  color: var(--brand-color);
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.links a{
+  color: var(--brand-color);
+}
+.links a:hover{
+  font-size: 1.1rem;
 }
 
 section {
