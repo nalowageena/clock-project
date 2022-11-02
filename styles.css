@@ -27,7 +27,7 @@ body {
     "aside footer";
   grid-template-columns: auto auto;
   grid-template-rows: auto 2rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 aside {
@@ -115,4 +115,11 @@ footer span{
   font-style: italic;
   font-weight: 500;
   color: var(--mid-color);
+}
+
+@media (max-width: 500px) {
+  body {
+    grid-template-columns: 0 auto;   
+  }
+
 }
