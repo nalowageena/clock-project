@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 svg {
   fill: var(--light-color);
   height: 45px;
@@ -10,4 +17,19 @@ svg {
 svg:hover {
   fill: var(--brand-color);
   transform: scale(1.8, 1.8);
+}
+
+h1 {
+  font-family: var(--brand-font);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 2.5rem;
+  padding-bottom: 1.2rem;
+  background-color: #b8bfc6;
+    background-image: linear-gradient(60deg, #b8bfc6, #ff6363);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
 }

@@ -1,7 +1,6 @@
 main {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     padding: 0.8rem;
     gap: 0.8rem;
   }
@@ -17,28 +16,15 @@ main {
     color: var(--brand-color);
   }
   
-  
-  section {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    grid-template-areas:
-      "stopwatch-form stopwatch-form";
-    grid-template-columns: 3fr 3fr;
-    padding: 1rem;
-  }
-  
   .timer-form {
-    grid-area: stopwatch-form;
+    margin: auto;
     background-color: black;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 28rem;
-    min-width: max-content;
-    place-items: center;
+    max-height: 23rem;
+    min-width: 32rem;
   }
   
  .custom-clock{
@@ -137,4 +123,22 @@ main {
 
   .inputTimer input[type="number"]{
     min-width: max-content;
+  }
+
+  @media (max-width: 768px) {
+    .stopwatch-form{
+      max-width: auto;
+    } 
+  }
+  
+  @media (max-width: 400px) {
+    .stopwatch-form {
+      padding: 0.6rem;
+    }
+    .custom-clock{
+      padding: 1.5rem 2rem;
+    }
+    .form-actions {
+      gap: 1rem;
+    }
   }

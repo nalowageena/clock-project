@@ -22,12 +22,13 @@ html, body{
 
 body {
   display: grid;
-  grid-template-areas:
-    "aside main"
-    "aside footer";
-  grid-template-columns: auto auto;
-  grid-template-rows: auto 2rem;
-  overflow-x: hidden;
+  grid-template-areas: "header"
+    "main"
+    "footer";
+  grid-template-columns: auto;
+  grid-template-rows: 2.5rem auto 2rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
 }
 
 aside {
@@ -69,39 +70,16 @@ aside li:hover i{
   font-size: larger;
 }
 
+header{
+  grid-area: header;
+}
+
 main {
   grid-area: main;
-  min-width: calc(100vw - 3rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-
-main,
-footer {
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-
-h1 {
-  font-family: var(--brand-font);
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-  font-size: 2.5rem;
-  padding-bottom: 1.2rem;
-  background-color: #b8bfc6;
-    background-image: linear-gradient(60deg, #b8bfc6, #ff6363);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
-}
-
 
 footer{
+  grid-area: footer;
   text-align: center;
   font-family: var(--doc-font);
   font-weight: 300;
@@ -115,11 +93,4 @@ footer span{
   font-style: italic;
   font-weight: 500;
   color: var(--mid-color);
-}
-
-@media (max-width: 500px) {
-  body {
-    grid-template-columns: 0 auto;   
-  }
-
 }
