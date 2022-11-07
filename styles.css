@@ -26,7 +26,7 @@ body {
     "aside main"
     "aside footer";
   grid-template-columns: max-content auto;
-  grid-template-rows: 2.5rem auto 2rem;
+  grid-template-rows: 7em auto 2rem;
   background-color: var(--dark-color);
   color: var(--light-color);
   
@@ -54,11 +54,10 @@ aside:hover{
   width: 12rem;
 }
 
-.divider {
+aside .divider {
   width: 90%;
   height: 2px;
   background-color: white;
-  opacity: 0.8;
   margin: 1.2rem 0;
 }
 
@@ -96,6 +95,16 @@ aside li:hover img{
 
 header{
   grid-area: header;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+header img{
+  height: 2rem;
+  width: 2rem;
 }
 
 main {
@@ -118,3 +127,5 @@ footer span{
   font-weight: 500;
   color: var(--mid-color);
 }
+
+
