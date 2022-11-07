@@ -93,6 +93,10 @@ aside li:hover img{
   transform: scale(1.4, 1.4);
 }
 
+aside li:has(i.fa-close){
+  display: none;
+}
+
 header{
   grid-area: header;
   margin: 1rem 1.2rem;
