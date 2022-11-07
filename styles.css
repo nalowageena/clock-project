@@ -95,16 +95,24 @@ aside li:hover img{
 
 header{
   grid-area: header;
-  margin: 1rem;
+  margin: 1rem 1.2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+}
+
+.logo{
+  display: flex;
   gap: 0.4rem;
 }
 
 header img{
   height: 2rem;
   width: 2rem;
+}
+
+i.fa-bars{
+  display: none;
 }
 
 main {
@@ -127,5 +135,6 @@ footer span{
   font-weight: 500;
   color: var(--mid-color);
 }
+
 
 

@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+    body {
+        display: grid;
+        grid-template-areas: "header"
+          "main"
+          "footer";
+        grid-template-columns: auto;
+        grid-template-rows: 7em auto 2rem;
+        background-color: var(--dark-color);
+        color: var(--light-color);
+      }
+
+      header{
+        justify-content: space-between;
+        position: relative;
+      }
+      
+      .logo{
+        display: flex;
+        gap: 0.4rem;
+      }
+      
+      header img{
+        height: 2rem;
+        width: 2rem;
+      }
+      
+      i.fa-bars{
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        top: 1.8rem;
+        right: 0;
+      }
+
+      aside {
+        display: none;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      
+  }
+  
+  @media (max-width: 400px) {
+    .all-alarms, .alarm{
+      width: 100%;
+    }
+    .alarm-form {
+      padding: 0.6rem;
+    }
+    
+    .alarm-form input[type="time"] {
+      padding: 1.5rem 0.8rem;
+    }
+  }
+  
