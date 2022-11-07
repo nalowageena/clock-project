@@ -22,16 +22,19 @@ html, body{
 
 body {
   display: grid;
-  grid-template-areas: "header"
-    "main"
-    "footer";
-  grid-template-columns: auto;
+  grid-template-areas: "aside header"
+    "aside main"
+    "aside footer";
+  grid-template-columns: max-content auto;
   grid-template-rows: 2.5rem auto 2rem;
   background-color: var(--dark-color);
   color: var(--light-color);
+  
 }
 
 aside {
+  grid-area: aside;
+  height: 100%;
   color: var(--light-color);
   grid-area: aside;
   background-color: var(--brand-color);
@@ -40,34 +43,55 @@ aside {
   flex-direction: column;
   justify-content: start;
   gap: 2.5rem;
-  min-width: 3rem;
   transition: min-width 1s, gap 2s;
-
+  z-index: 1;
   white-space: nowrap;
+  overflow: hidden;
+  width: 4rem;
+  transition: all 0.5s;
+}
+aside:hover{
+  width: 12rem;
+}
+
+.divider {
+  width: 90%;
+  height: 2px;
+  background-color: white;
+  opacity: 0.8;
+  margin: 1.2rem 0;
 }
 
 aside li{
   list-style: none;
-  padding: 1.2rem 0.3rem;
+  padding: 1rem 0.7rem;
   cursor: pointer;
 }
-aside:hover {
-  min-width: 10rem;
-  gap: 6rem;
+
+aside a{
+  color: white;
+  text-decoration: none;
 }
 
 aside input[type="range"] {
   accent-color: var(--dark-color);
 }
 
-aside i {
+aside i, aside img{
   margin-right: 1.5rem;
-  
 }
 
 aside li:hover i{
-  color: var(--mid-color);
-  font-size: larger;
+  transform: scale(1.4, 1.4); 
+}
+
+aside img{
+  height: 16px;  
+  width: 16px;
+}
+
+aside li:hover img{
+  transform: scale(1.4, 1.4);
 }
 
 header{

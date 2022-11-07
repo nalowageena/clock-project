@@ -24,7 +24,7 @@ main {
     flex-direction: column;
     align-items: center;
     max-height: 23rem;
-    min-width: 32rem;
+    min-width: 28rem;
   }
   
  .custom-clock{
