@@ -41,6 +41,7 @@
     position: fixed;
     top: 0;
     left: 0;
+    transition: all 0.5s;
   }
 
   aside:hover {
@@ -53,15 +54,5 @@
 }
 
 @media (max-width: 400px) {
-  .all-alarms,
-  .alarm {
-    width: 100%;
-  }
-  .alarm-form {
-    padding: 0.6rem;
-  }
 
-  .alarm-form input[type="time"] {
-    padding: 1.5rem 0.8rem;
-  }
 }

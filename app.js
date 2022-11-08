@@ -4,7 +4,7 @@ const sidebar = document.querySelector('aside');
 openSidebar.addEventListener('click', showSidebar);
 
 function showSidebar() {
-    sidebar.style.display = 'flex';
+    sidebar.style.display = 'block';
 }
 
 const closeSidebarbtn = document.querySelector('aside li:has(i.fa-close)');
