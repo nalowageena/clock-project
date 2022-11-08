@@ -118,12 +118,13 @@ main {
 
   @media (max-width: 768px) {
     .stopwatch-form{
-      max-width: auto;
-    } 
+      min-width: 22rem;
+    }
   }
   
   @media (max-width: 400px) {
     .stopwatch-form {
+      min-width: 16rem;
       padding: 0.6rem;
     }
     .custom-clock{

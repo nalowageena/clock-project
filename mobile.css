@@ -36,7 +36,7 @@
 
   aside {
     display: none;
-    height: 100%;
+    height: auto;
     width: 100%;
     position: fixed;
     top: 0;

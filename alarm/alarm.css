@@ -182,12 +182,12 @@ input[name="label"]::placeholder {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
+  .alarm-form{
+    min-width: 22rem;
+  }
   .all-alarms, .alarm{
     width: 100%;
   }
-  .alarm-form{
-    max-width: auto;
-  } 
 }
 
 @media (max-width: 400px) {
@@ -195,6 +195,7 @@ input[name="label"]::placeholder {
     width: 100%;
   }
   .alarm-form {
+    min-width: 16rem;
     padding: 0.6rem;
   }
   
