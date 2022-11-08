@@ -52,12 +52,12 @@ function updateTime() {
     second--;
   }
 
-  if (minute > 0 && second === 0) {
+  else if (second == 0 && minute > 0) {
     second = 59;
     minute--;
   }
 
-  if (hour > 0 && minute === 0) {
+  else if (minute == 0 && hour > 0 ) {
     minute = 59;
     hour--;
   }
