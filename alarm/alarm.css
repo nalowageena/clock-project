@@ -175,13 +175,16 @@ input[name="label"]::placeholder {
   color: crimson;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
   section {
     grid-template-areas:
        "alarm-form" "all-alarms";
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
+}
+
+@media (max-width: 768px) {
   .alarm-form{
     min-width: 22rem;
   }
