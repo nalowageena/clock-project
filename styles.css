@@ -46,7 +46,7 @@ aside {
   z-index: 1;
   white-space: nowrap;
   overflow: hidden;
-  width: 12rem;
+  width: 3rem;
   transition: all 0.5s;
 }
 aside:hover{
