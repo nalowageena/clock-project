@@ -29,7 +29,6 @@ body {
   grid-template-rows: 7em auto 2rem;
   background-color: var(--dark-color);
   color: var(--light-color);
-  
 }
 
 aside {
@@ -38,16 +37,16 @@ aside {
   color: var(--light-color);
   grid-area: aside;
   background-color: var(--brand-color);
-  padding: 1rem;
+  /* padding: 1rem; */
   display: flex;
   flex-direction: column;
   justify-content: start;
-  gap: 2.5rem;
+  gap: 1.5rem;
   transition: min-width 1s, gap 2s;
   z-index: 1;
   white-space: nowrap;
   overflow: hidden;
-  width: 4rem;
+  width: 12rem;
   transition: all 0.5s;
 }
 aside:hover{
@@ -56,24 +55,30 @@ aside:hover{
 
 aside .divider {
   width: 90%;
-  height: 2px;
-  background-color: white;
-  margin: 1.2rem 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  margin: 1.2rem auto;
+}
+
+aside ul, aside li{
+  width: 100%;
 }
 
 aside li{
   list-style: none;
-  padding: 1rem 0.7rem;
   cursor: pointer;
 }
 
 aside a{
   color: white;
+  height: 100%;
+  display: block;
   text-decoration: none;
+  padding: 1rem 0.7rem;
 }
 
-aside input[type="range"] {
-  accent-color: var(--dark-color);
+aside li:has(i.fa-close){
+  padding: 1rem 0.7rem;
 }
 
 aside i, aside img{

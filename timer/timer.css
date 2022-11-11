@@ -39,10 +39,6 @@ main {
     margin: 3rem 1rem;
   }
 
-  input[type="time"]:focus {
-    outline: 2px solid var(--mid-color);
-  }
-
   .form-actions {
     margin-top: auto;
     display: flex;
@@ -123,6 +119,8 @@ main {
 
   .inputTimer input[type="number"]{
     min-width: max-content;
+    color: black;
+    background-color: white;
   }
 
   @media (max-width: 768px) {
